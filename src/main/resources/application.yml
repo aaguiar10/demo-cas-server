@@ -1,0 +1,59 @@
+# Application properties that need to be
+# embedded within the web application can be included here
+cas:
+  server:
+    name: https://cas-serv-demo.up.railway.app
+    prefix: ${cas.server.name}/cas
+  authn:
+    accept:
+      users:
+    jdbc:
+      query:
+        - sql: SELECT * FROM users WHERE username = ?
+          url: jdbc:${MYSQL_URL}
+          dialect: org.hibernate.dialect.MYSQLDialect
+          user: ${MYSQLUSER}
+          password: ${MYSQLPASSWORD}
+          ddl-auto: none
+          driver-class: com.mysql.cj.jdbc.Driver
+          password-encoder:
+            type: BCRYPT
+            strength: 10
+          field-password: password
+  logout:
+    follow-service-redirects: true
+    redirect-parameter: service
+  # when server starts, output shows newly generated keys to replace empty key values
+  tgc:
+    crypto:
+      signing:
+        key: ${TGCSIGNINGKEY}
+      encryption:
+        key: ${TGCENCRYPTIONKEY}
+  webflow:
+    crypto:
+      signing:
+        key: ${WEBFLOWSIGNINGKEY}
+      encryption:
+        key: ${WEBFLOWENCRYPTIONKEY}
+  ticket:
+    registry:
+      in-memory:
+        crypto:
+          enabled: true
+          signing:
+            key: ${TICKETSIGNINGKEY}
+          encryption:
+            key: ${TICKETENCRYPTIONKEY}
+
+server:
+  ssl:
+    enabled: false
+  port: ${PORT:8443}
+
+spring:
+  security:
+    user:
+      name: ${SPRINGSECURITY_NAME}
+      password: ${SPRINGSECURITY_PW}
+    require-ssl: true

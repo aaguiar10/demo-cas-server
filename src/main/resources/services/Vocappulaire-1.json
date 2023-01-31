@@ -1,0 +1,14 @@
+{
+    "@class" : "org.apereo.cas.services.CasRegisteredService",
+    "serviceId" : "https://vocappulaire.onrender.com.*",
+    "name" : "Vocappulaire",
+    "logoutType" : "BACK_CHANNEL",
+    "logoutUrl" : "https://vocappulaire.onrender.com/logout.*",
+    "id" : 1,
+    "description" : 
+    "This service is for demonstration purposes. Demo credentials: username-casuser, password-Mellon",
+    "evaluationOrder" : 1,
+    "attributeReleasePolicy" : {
+        "@class" : "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+    }
+}

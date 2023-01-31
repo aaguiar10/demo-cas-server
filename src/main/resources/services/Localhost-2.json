@@ -1,0 +1,14 @@
+{
+    "@class" : "org.apereo.cas.services.CasRegisteredService",
+    "serviceId" : "http://localhost:5000.*",
+    "name" : "localhost",
+    "logoutType" : "BACK_CHANNEL",
+    "logoutUrl" : "http://localhost:5000/logout.*",
+    "id" : 2,
+    "description" : 
+    "This service is for demonstration purposes. Demo credentials: username-casuser, password-Mellon",
+    "evaluationOrder" : 2,
+    "attributeReleasePolicy" : {
+      "@class" : "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+    }
+}
