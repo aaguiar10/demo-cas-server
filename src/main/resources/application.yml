@@ -9,7 +9,7 @@ cas:
       users:
     jdbc:
       query:
-        - sql: SELECT * FROM users WHERE username = ?
+        - sql: SELECT * FROM ${MYSQLDB}.users WHERE username = ?
           url: jdbc:${MYSQL_URL}
           dialect: org.hibernate.dialect.MYSQLDialect
           user: ${MYSQLUSER}

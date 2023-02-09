@@ -5,6 +5,6 @@ Authenticate users with the [CAS](https://apereo.github.io/cas/6.6.x/index.html)
 ## Versions
 
 - CAS Server `6.6.1`
-- JDK >= `11`
+- JDK `11`
 
-With the included `Procfile`, you can deploy the server on a hosting service.
+With the included `Procfile` or `Dockerfile`, you can deploy the server on a hosting service.
